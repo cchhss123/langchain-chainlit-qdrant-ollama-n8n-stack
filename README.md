@@ -7,7 +7,6 @@
 本專案整合了以下主流的 AI 與資料處理框架，以實現一個完整的 RAG 應用：
 
 *   **LangChain**: 作為核心框架，用於串連大型語言模型（LLM）與各種外部資料源，建構複雜的 LLM 工作流程。
-*   **LlamaIndex**: 作為數據框架，專門處理和索引非結構化與結構化數據，並為 RAG 應用提供高效的數據檢索能力。
 *   **Chainlit**: 用於快速開發與部署 LLM 應用的前端介面，提供了一個友善的聊天機器人 UI。
 *   **Ollama**: 讓您可以在本地端輕鬆運行大型語言模型，例如 Llama 3、Mistral 等。
 *   **Qdrant**: 一個高效能的向量資料庫，用於儲存由文件中產生的向量嵌入（Embeddings），並提供快速的相似度搜尋。
@@ -65,3 +64,9 @@ python -m utils.ingest
 | `OLLAMA_URL`                | Ollama 服務的連線 URL。                  | `http://ollama:11434`                  |
 | `OLLAMA_LLM_MODEL`          | 指定要使用的 Ollama 語言模型。           | `deepseek-r1:1.5b`                     |
 | `DATA_INGESTION_LOCATION`   | 指定要進行內嵌的資料來源路徑。           | `/data`                                |
+
+
+## 4. 計畫增加 n8n 工作流
+
+    目前僅有 n8n 環境介面，
+    預計再增加 一個自動化工作流，自動去 /data 資料夾，將檔案 轉換為向量並存入 Qdrant 向量資料庫中 
