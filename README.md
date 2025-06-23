@@ -35,12 +35,15 @@ ollama pull nomic-embed-text
 
 ### 步驟三：資料內嵌 (Ingestion)
 
-進入 `chainlit` 容器，執行資料內嵌腳本。此腳本會讀取 `data/` 目錄下的文件，將其轉換為向量並存入 Qdrant 向量資料庫中。
+先將要進行 RAG 的 pdf 檔案，放入`data`目錄下，目前已有放1個 測試用的 pdf，在`data`目錄下，可自行新增其他pdf檔案， 
+然後進入 `chainlit` 容器，執行資料內嵌python程式如下。
 
 ```shell
 cd /code/app
 python -m utils.ingest
 ```
+此程式會讀取 `data` 目錄下的文件，將其轉換為向量並存入 Qdrant 向量資料庫中。
+
 
 ### 步驟四：驗證與使用服務
 
